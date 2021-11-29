@@ -1,0 +1,62 @@
+---
+- &4 !ruby/object:Milk
+  amount: 16
+- &5 !ruby/object:CoffeeBeans
+  amount: 14
+- &6 !ruby/object:Water
+  amount: 10
+- - !ruby/object:Order
+    user: &1 !ruby/object:User
+      first_name: Bob
+      last_name: Job
+      age: 10
+    drink: !ruby/object:Cappuccino
+      milk: !ruby/object:Milk
+        amount: 8
+      coffee_beans: &2 !ruby/object:CoffeeBeans
+        amount: 7
+      water: &3 !ruby/object:Water
+        amount: 5
+    date: 2021-11-29 17:58:26.476604000 +02:00
+  - !ruby/object:Order
+    user: *1
+    drink: !ruby/object:Americano
+      coffee_beans: *2
+      water: *3
+    date: 2021-11-29 17:58:26.476616000 +02:00
+  - !ruby/object:Order
+    user: !ruby/object:User
+      first_name: Nick
+      last_name: Check
+      age: 22
+    drink: !ruby/object:Americano
+      coffee_beans: *2
+      water: *3
+    date: 2021-11-29 17:58:26.476620000 +02:00
+  - !ruby/object:Order
+    user: &7 !ruby/object:User
+      first_name: Bob
+      last_name: Job
+      age: 10
+    drink: !ruby/object:Cappuccino
+      milk: *4
+      coffee_beans: *5
+      water: *6
+    date: 2021-11-29 18:14:38.964491000 +02:00
+  - !ruby/object:Order
+    user: *7
+    drink: !ruby/object:Americano
+      coffee_beans: *5
+      water: *6
+    date: 2021-11-29 18:14:38.964508000 +02:00
+  - !ruby/object:Order
+    user: &8 !ruby/object:User
+      first_name: Nick
+      last_name: Check
+      age: 22
+    drink: !ruby/object:Americano
+      coffee_beans: *5
+      water: *6
+    date: 2021-11-29 18:14:38.964525000 +02:00
+- - *7
+  - *8
