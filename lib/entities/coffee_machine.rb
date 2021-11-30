@@ -1,5 +1,6 @@
 class CoffeeMachine
   include Storage
+  include Statistics
 
   attr_reader :milk, :coffee_beans, :water, :orders, :users
 

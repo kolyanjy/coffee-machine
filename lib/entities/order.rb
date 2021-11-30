@@ -1,6 +1,8 @@
 class Order
   include Validator
 
+  attr_reader :user, :drink, :date
+
   def initialize(user, drink, date = Time.now)
     @user = user
     @drink = drink
