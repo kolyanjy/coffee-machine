@@ -11,7 +11,7 @@ class CoffeeMachine
     @orders = []
     @users = []
 
-    data = load_db
+    load_db
   end
 
   def add(entity)

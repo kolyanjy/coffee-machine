@@ -4,7 +4,7 @@ class Americano
   RECIPE = {
     coffee_beans: 1,
     water: 2
-  }
+  }.freeze
 
   def initialize(water:, coffee_beans:)
     @coffee_beans = coffee_beans

@@ -2,7 +2,7 @@ module Storage
   FILE_PATH = 'data/data.yml'.freeze
 
   def load_data
-    create_storage unless storage_exist? 
+    create_storage unless storage_exist?
 
     list = [User, CoffeeBeans, Water, Milk, Time, Order, Cappuccino, Americano, Espresso]
     YAML.safe_load(File.read(FILE_PATH), list, [], [], true)

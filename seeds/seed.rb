@@ -1,4 +1,4 @@
-require_relative '../autoload.rb'
+require_relative '../autoload'
 machine = CoffeeMachine.new
 
 machine.add(Milk.new(10))

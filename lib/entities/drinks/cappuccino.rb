@@ -5,7 +5,7 @@ class Cappuccino
     coffee_beans: 1,
     water: 1,
     milk: 2
-  }
+  }.freeze
 
   def initialize(water:, coffee_beans:, milk:)
     @milk = milk
