@@ -27,24 +27,24 @@ class CoffeeMachine
   end
 
   def make_cappuccino(user)
-    drink = Cappuccino.new(water: @water, coffee_beans: @coffee_beans, milk: @milk)
-    decrise_ammount(drink)
-    add(Order.new(user, drink))
+    cook Cappuccino.new(water: @water, coffee_beans: @coffee_beans, milk: @milk), user
   end
 
   def make_espresso(user)
-    drink = Espressoo.new(water: @water, coffee_beans: @coffee_beans)
-    decrise_ammount(drink)
-    add(Order.new(user, drink))
+    cook Espressoo.new(water: @water, coffee_beans: @coffee_beans), user
   end
 
   def make_americano(user)
-    drink = Americano.new(water: @water, coffee_beans: @coffee_beans)
-    decrise_ammount(drink)
-    add(Order.new(user, drink))
+    cook Americano.new(water: @water, coffee_beans: @coffee_beans), user
   end
 
   private
+
+  def cook(drink, user)
+    decrise_ammount(drink)
+    add(Order.new(user, drink))
+    drink
+  end
 
   def decrise_ammount(drink)
     drink.class::RECIPE.each do |ingredient, value|
