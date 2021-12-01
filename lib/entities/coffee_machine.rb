@@ -41,12 +41,12 @@ class CoffeeMachine
   private
 
   def cook(drink, user)
-    decrise_ammount(drink)
+    decrease_amount(drink)
     add(Order.new(user, drink))
     drink
   end
 
-  def decrise_ammount(drink)
+  def decrease_amount(drink)
     drink.class::RECIPE.each do |ingredient, value|
       case ingredient
       when :coffee_beans then @coffee_beans.amount -= value
